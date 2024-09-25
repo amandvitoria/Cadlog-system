@@ -3,8 +3,28 @@ require_once 'models/database.php';
 
 class User 
 {
+    //Função para localizar o usuarío pelo email
     public static function findByEmail($email){
+        $con = Database::getconnection();
+        $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = :email");
+        $stmt->execute(['email => $email']);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
         
+    }
+
+    //Função para encontrar usuario pelo ID
+    public static function find($id){
+    $conn = Database::getconnection();
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE id = :id");
+    $stmt->execute(['id '=> $id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    // Função para criar um novo usuário no banco de dados
+    public static function create($data){
+        $conn = Database::getconnection();
+        $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, senha, perfil) VALUES (:nome, :email, :senha, :perfil)");
+        $stmt->execute($data);
     }
 }
 ?>
