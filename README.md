@@ -12,7 +12,7 @@
 
 
 ## Fontes utilizadas
--CSS
--HTML.5
--PhpmyAdmin
--GitHub
+- CSS  
+- HTML.5  
+- PhpmyAdmin  
+- GitHub  
