@@ -10,6 +10,12 @@
 ## Tela de Login
 ![img](img/Captura%20de%20tela%202024-09-30%20080013login.png)
 
+## CSS:
+Adicionei cor de fundo com um degrade e utilizei a ferramenta css-gradeent.
+Adicionei borda.
+Aumentei as caixas de texto.
+Alteração nas fontes.
+Sombriado colorido nas caixas de texto e botão
 
 ## Fontes utilizadas
 - CSS  
