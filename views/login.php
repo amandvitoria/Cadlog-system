@@ -4,90 +4,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrar</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login / Cadastro</title>
+
     <style>
         body {
-            text-align: center;
-            background: rgb(68, 81, 196);
-            background: rgb(219, 244, 239);
-            background: radial-gradient(circle, rgba(219, 244, 239, 1) 0%, rgba(70, 106, 182, 1) 100%);
-            margin-top: 150px;
-            margin-left: 400px;
-            margin-right: 400px;
-            
-
+            background-image: url('https://img.freepik.com/vetores-gratis/particula-de-tecnologia-abstrata-realista-de-fundo_23-2148431735.jpg?semt=ais_hybrid');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
         }
 
-        div {
-            border: 5px;
-            width: 60%;
-            background-color: white;
-            border-radius: 5px;
-            left: 100px;
-            position: relative;
-
-        }
-
-        input{
-            padding: 7px;
-            border-radius: 5px;
-            border: 1px solid black;
-        }
-
-        input:focus{
-            border-color: blue;
-            outline: none;
-            box-shadow: 0px 2px 3px blue;
-        }
-
-        button {
-            padding: 10px;
-            background-color: lightblue;
-            border: 1px;
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
             border-radius: 10px;
-            color: black;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 400px;
+            position: relative;
         }
 
-        button:hover {
-            background-color: blue;
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
             color: white;
-            transition: color 0.3s;
+            margin-bottom: 20px;
         }
 
-        label{
-            font-size: large;
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
         }
 
-        a{
-            color: black;
+        input[type="text"], input[type="password"], input[type="email"] {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
         }
-        a:hover{
-            color: blue;
+
+        input[type="submit"] {
+            background-color: lightblue;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
         }
-        
+
+        input[type="submit"]:hover {
+            background-color: deepskyblue;
+        }
+
+        .error-message {
+            background-color: red;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            animation: shake 0.3s ease-in-out;
+            margin-bottom: 15px;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            75% { transform: translateX(-10px); }
+            100% { transform: translateX(0); }
+        }
+
+        p, a {
+            color: lightblue;
+            font-size: 1em;
+            font-weight: 300;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- O formulário usa o método POST para enviar dados de forma segura -->
-    <!-- Os dados serão enviados para 'index.php' com a ação 'login' -->
-    <main>
-        
-        <div><br>
-            <form method="post" action="index.php?action=login">
-                <h2>Tela de Login</h2>
-                <label for="nome">Nome:</label><br>
-                <input type="email" name="email" placeholder="Email" required><br><br>
-                <label for="nome">Senha:</label><br>
-                <input type="password" name="senha" placeholder="Senha" required><br><br>
-                <button type="submit">Login</button><br><br>
-            </form>
-            <!-- Define o destino do link e leva à opção de cadastro -->
-            <a href="index.php?action=register">Cadastrar-se</a>
-        </div>
-    </main>
+    <div class="form-container">
+        <h1>Login</h1>
 
+        <!-- Exibe a mensagem de erro caso exista -->
+        <?php if (isset($error_message)): ?>
+            <div class="error-message">
+                <?= $error_message ?>
+            </div>
+        <?php endif; ?>
+
+        <form action="index.php?action=login" method="post">
+            <input type="text" name="email" placeholder="Usuário" required>
+            <input type="password" name="senha" placeholder="Senha" required>
+            <input type="submit" value="Entrar">
+        </form>
+
+        <p>Não tem uma conta? <a href="index.php?action=register">Cadastre-se</a></p>
+    </div>
 </body>
 
 </html>
