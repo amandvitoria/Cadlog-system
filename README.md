@@ -5,10 +5,22 @@
 
 
 ## Tela de Cadastro
-![img](img/Captura%20de%20tela%202024-09-30%20080129cadastro.png)
+![img](img/cadastro.png)
 
 ## Tela de Login
-![img](img/Captura%20de%20tela%202024-09-30%20080013login.png)
+![img](img/login.png)
+
+## Tela Inicial Colaborador
+![img](img/inicio.png)
+
+## Tela Inicial Admin
+![img](img/tela%20inicial%20admi.png) 
+
+## Tela Inicial Gestor
+![img](img/inicio_gestor.png)
+
+## Lista de usuário
+![img](img/lista_usu.png)
 
 ## CSS:
 Adicionei cor de fundo com um degrade e utilizei a ferramenta css-gradeent.
