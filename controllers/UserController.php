@@ -34,7 +34,7 @@ class UserController
         if ($_SESSION['perfil'] == 'admin' || $_SESSION['perfil'] == 'gestor') {
             $user = User::find($id);
 
-            if ($_SERVER['RESQUET_METHOD'] == 'POST') {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $data = [
                     'nome' => $_POST['nome'],
                     'email' => $_POST['email'],
@@ -44,7 +44,11 @@ class UserController
 
                 User::update($id, $data);
                 header('location: index.php? action=list');
+            } else {
+                include      'views/edit_user.php';
             }
+        } else {
+            echo ' você não tem permissão para editar usuários';
         }
     }
 }
