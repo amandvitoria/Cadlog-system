@@ -34,8 +34,9 @@
 
 ## Tela de edidar e excluir
 ![img](img/editar%20usuario.png)
-- essa tela servira para que o Admin ou gestor possa realizar suas Alterações edidar ou excluir usuarios. 
-- E algumas funcionalidades terão acesso restritos de acordo com alguns usuários.
+- essa tela servira para que o Admin ou gestor possa realizar suas Alterações edidar ou excluir usuarios.
+-  Quando o admin ou gestor forem editar as suas alterações, elas serão salvas no banco de dados.
+- algumas funcionalidades terão acesso restritos de acordo com alguns usuários.
 
 
 ## CSS:
