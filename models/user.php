@@ -3,7 +3,7 @@ require_once 'models/database.php';
  
 class User
 {
-    //Função para localizar usuário pelo email
+    // Função para localizar usuário pelo email
     public static function findByEmail($email)
     {
         $conn = Database::getConnection();
@@ -12,8 +12,7 @@ class User
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
  
- 
-    //Função para encontrar usuario pelo id
+    // Função para encontrar usuário pelo id
     public static function find($id)
     {
         $conn = Database::getConnection();
@@ -21,29 +20,44 @@ class User
         $stmt->execute(['id' => $id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-    //Função para criar um novo usuario no banco de dados
+ 
+    // Função para criar um novo usuário no banco de dados
     public static function create($data)
     {
         $conn = Database::getConnection();
+       
         $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, senha, perfil) VALUES (:nome, :email, :senha, :perfil)");
         $stmt->execute($data);
     }
-    //Função para todos os dados de todos os usuarios do banco de dados
  
+    // Função para obter todos os dados de todos os usuários do banco de dados
     public static function all()
     {
         $conn = Database::getConnection();
-        $stmt = $conn->query('SELECT * from usuarios');
+        $stmt = $conn->query('SELECT * FROM usuarios');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
-    public static function update($id, $data){
-        $conn = Database::getconnection();
-        //  prepara a consulta SQL para atualizar os dados do usuário
-        $stmt=$conn->prepare('UPDATE usuarios SET nome= :nome, email= :email, perfil= :perfil, WHERE :id');
-
+ 
+    // Função para atualizar os dados do usuário
+    public static function update($id, $data)
+    {
+        $conn = Database::getConnection();
+ 
+   
+        $stmt = $conn->prepare('UPDATE usuarios SET nome = :nome, email = :email, perfil = :perfil WHERE id = :id');
+ 
+        // Adiciona o ID aos dados para a execução
         $data['id'] = $id;
-        $stmt->execute($data);
+ 
+        // Execute a query e retorne o resultado
+        return $stmt->execute($data);
     }
+    // Função que exclui usuario
+    public static function delete($id)
+{
+    $conn = Database::getConnection();
+    $stmt = $conn->prepare("DELETE FROM usuarios WHERE id = :id");
+    $stmt->execute(['id' => $id]);
 }
-?>
+ 
+}

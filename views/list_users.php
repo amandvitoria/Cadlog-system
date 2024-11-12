@@ -136,7 +136,7 @@ if (isset($_SESSION['perfil'])) :
 
                                 <!-- insere botao de exclusao apenas para perfil admin -->
                                 <?php if ($_SESSION['perfil'] == 'admin') : ?>
-                                    <a href="">Excluir</a>
+                                    <a href="index.php?action=delete&id=<?=$user['id']?>">Excluir</a>
                                 <?php endif; ?>
                             </td>
                         </tr>
@@ -152,3 +152,4 @@ if (isset($_SESSION['perfil'])) :
 <?php else : ?>
     <p>Erro: Você não tem permissão para vizualizar essa página</p>
 <?php endif; ?>
+

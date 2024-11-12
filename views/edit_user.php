@@ -131,7 +131,7 @@
 <body class="edit-body">
     <div class="edit-container">
         <h2>Editar Usuário</h2>
-        <form method="post" action="idex.php?action=edit&id=<?= $user['id'] ?>" class="edit-form">
+        <form method="post" action="index.php?action=edit&id=<?= $user['id'] ?>" class="edit-form">
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome" value="<?= $user['nome'] ?>" required><br>
 
