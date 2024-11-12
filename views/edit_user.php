@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Usuário</title>
-    <link rel="stylesheet" href="css/edit.css">
 
-    <style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<style>
         body {
             background-image: url('https://img.freepik.com/vetores-gratis/particula-de-tecnologia-abstrata-realista-de-fundo_23-2148431735.jpg?semt=ais_hybrid');
             background-size: cover;
@@ -31,7 +34,7 @@
             position: relative;
         }
 
-        h1 {
+        h2 {
             font-family: 'Dancing Script', cursive;
             font-size: 3em;
             color: white;
@@ -54,15 +57,21 @@
             color: #333;
         }
 
-        input[type="submit"] {
+        button {
+            width: 100%;
+            padding: 10px;
             background-color: lightblue;
-            color: white;
-            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            color: black;
+            font-size: 1em;
             cursor: pointer;
         }
 
-        input[type="submit"]:hover {
-            background-color: deepskyblue;
+        button:hover {
+            background-color: blue;
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .error-message {
@@ -119,8 +128,6 @@
         }
     </style>
 
-</head>
-
 <body class="edit-body">
     <div class="edit-container">
         <h2>Editar Usuário</h2>
@@ -133,9 +140,9 @@
 
             <label for="perfil">Perfil:</label><br>
             <select name="perfil" id="perfil">
-                <option value="admim" <?= $user['perfil'] == 'admim' ? 'selected' : '' ?>>Admin</option>
-                <option value="gestor" <?= $user['perfil'] == 'gestor' ? 'selected' : '' ?>>Gestor</option>
-                <option value="colaborador" <?= $user['perfil'] == 'colaborador' ? 'selected' : '' ?>>Colaborador</option>
+                <option value="admim" <?= $user['perfil'] == 'admim' ? 'selected' : '' ?> >Admin </option>
+                <option value="gestor" <?= $user['perfil'] == 'gestor' ? 'selected' : '' ?> >Gestor</option>
+                <option value="colaborador" <?= $user['perfil'] == 'colaborador' ? 'selected' : '' ?> >Colaborador</option>
             </select><br><br>
 
             <button type="submit" class="btn">Salvar</button><br>
