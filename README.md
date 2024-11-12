@@ -33,8 +33,8 @@
 - Essa aba serve para que os usuários admin e gestor tenha noção e organização de seu sistema tendo informações dos usuarios em uma visão ampla e organizada.
 
 ## Tela de edidar e excluir
-
-- essa tela esta em criação e servira para que o Admin ou gestor possa realizar suas Alterações edidar ou excluir usuarios. 
+![img](img/editar%20usuario.png)
+- essa tela servira para que o Admin ou gestor possa realizar suas Alterações edidar ou excluir usuarios. 
 - E algumas funcionalidades terão acesso restritos de acordo com alguns usuários.
 
 
